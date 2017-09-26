@@ -93,6 +93,7 @@ this picture is turned back into the original perspective and used as overlay on
 The second notebook contains the pipeline as applied to the video and includes some sanity checks (tests if lines are parallel, not too distant and have similar curvature) and smoothing (average of last several fits is used to draw the lane) in order to prevent bad 
 results from distorting the lane lines too much. If the detected lines are not good a new sliding window search is initiated, otherwise the shorter update function is used to look in the vicinity of the last fit.
 The notebook also contains a region of interest masking as in the first lane line project. 
+The video is annotated with info on lane curvature radius and distance of detected lane center to image center (as estimate for position of vehicle on road).
 
 Here's a [link to my video result](./p_output_lanelines.mp4)
 
@@ -105,3 +106,4 @@ Here's a [link to my video result](./p_output_lanelines.mp4)
 The pipeline described above works reasonably well for the project video (with some minor glitches). It does not work well for the challenge videos. More fine-tuning for the color and gradient thresholding is 
 required to prevent parts of the road with different colors, shadows and other cars from interfering with the result.
 The even harder challenge video shows that the pipeline relies on some assumptions such as roads with little inclination and not a lot of distration from other traffic as well as somewhat consistent lighting conditions.
+After feedback from the reviewer modifications to the color selection turned out to be helpful for some problematic areas of the project video.
